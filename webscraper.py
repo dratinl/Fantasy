@@ -3,7 +3,7 @@ import itertools
 import requests
 
 
-# Checks for players listed on user's team in rotoworld headlines. If players match the story is updated to team.txt
+# Checks for players listed on user's team in rotoworld headlines. If players match, their news is sent to team.txt. All news then sent to console
 def check_team(team, players, player_stories):
 	for y,z in zip(players,player_stories):
 		for x in team: 
@@ -43,6 +43,6 @@ players= [pg.select('a') for pg in players_general]
 
 
 
-team = ['Chris Carson', 'Mike Purcell']
+team = []
 
 check_team(team, players, player_stories)
